@@ -126,6 +126,9 @@ func (t *TestRunner) BuildArgs(path string) []string {
 			args = append(args, fmt.Sprintf("-%s=%s", opt, *s))
 		}
 	}
+
+  fmt.Println("MONKEY PATCHING")
+  args = append(args, fmt.Sprintf("-memprofile mem.prof"))
 	return args
 }
 
